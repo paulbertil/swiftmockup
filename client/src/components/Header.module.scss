@@ -1,0 +1,45 @@
+@import '../styles/abstracts/variables';
+
+.header {
+    position: absolute;
+    top:0;
+    left:0;
+    width: 100%;
+
+
+    &Content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 0;
+    }
+
+    &NavList {
+        display: flex;
+        list-style-type: none;
+
+        @media (max-width: 600px) {
+            display: none;
+        }
+    }
+
+    &NavListItem {
+        padding: 1rem;
+
+        &:not(:last-of-type) {
+            margin-right: 3rem;
+        }
+
+        a {
+            text-decoration: none;
+            color: $color-white;
+            font-family: 'Paytone One', sans-serif;
+        }
+    }
+
+    &NavListLink {
+        &:hover {
+            color: $color-cta;
+        }
+    }
+}

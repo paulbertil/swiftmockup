@@ -1,0 +1,37 @@
+@import './abstracts/variables';
+
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&family=Poppins:wght@400;700&display=swap');
+
+
+*,*::before,*::after {
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+
+   
+}
+
+
+body {
+    background-color: $color-bg;
+    color: $color-bg-text;
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+h1,h2,h3 {
+    color: $color-white;
+}
+
+h1 {font-size: 4.8rem;}
+h2 {font-size: 3.8rem;}
+
+a {
+    color: $color-cta;
+    font-weight: 700;
+}

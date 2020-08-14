@@ -1,0 +1,23 @@
+@import '../styles/abstracts/variables';
+
+.perks {
+    padding: $section-padding;
+
+
+    h2 {
+        font-family: 'Paytone One', sans-serif;
+        text-align: center;
+    }
+
+    &Grid {
+        padding: 10rem 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 8rem;
+
+        @media (max-width: 1200px) {
+            grid-template-columns: 1fr;
+            place-items: center;
+        }
+    }
+}

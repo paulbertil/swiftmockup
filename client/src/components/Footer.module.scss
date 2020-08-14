@@ -1,0 +1,21 @@
+@import '../styles/abstracts/variables';
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10rem;
+    
+    background-color: $color-bg-dark;
+    min-height: 200px;
+    width: 100%;
+
+    p{text-align: center;}
+    
+    &Logo {
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 5rem;
+    }
+}

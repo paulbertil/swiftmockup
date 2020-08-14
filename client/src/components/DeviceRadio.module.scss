@@ -1,0 +1,25 @@
+@import '../styles/abstracts/variables';
+
+.device {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    text-align: center;
+
+    &Radio {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    &CustomRadio {
+        width: 20px;
+        height: 20px;
+        border: 4px solid $color-bg-text;
+        border-radius: 50%;
+    }
+
+    &Radio:checked + &CustomRadio {
+        background-color: $color-cta;
+    }
+}

@@ -1,0 +1,33 @@
+@import '../styles/abstracts/variables';
+
+.button {
+    position: relative;
+    padding: 1.5rem 2rem;
+    background-color: $color-cta;
+    border: none;
+    border-radius: 20rem;
+    z-index: 2;
+    font-family: 'Paytone One',sans-serif;
+    cursor: pointer;
+    font-size: 1.8rem;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 10px;
+        width: 100%;
+        height: 100%;
+        border-radius: 20rem;
+        left: 5px;
+        border: 4px solid $color-cta;
+        z-index: 1;
+        transition: all .3s ease;
+    }
+
+    &:hover  {
+        &::after {
+            top:0;
+            left:0;
+        }
+    }
+}
