@@ -10,12 +10,15 @@ const takeScreenshot = async (url, device) => {
         { width: 375, height: 812, deviceScaleFactor: 2 } : device === "laptop" ?
             { width: 1440, height: 900, deviceScaleFactor: 2 } : { width: 1920, height: 1080, deviceScaleFactor: 2 }
 
+    // clean user input if https:// or http://
+    const strippedUrl = url.replace(/(^\w+:|^)\/\//, '');
+
     try {
         const browser = await puppeteer.launch(puppeteerConfig)
         const page = await browser.newPage();
         // deviceScaleFactor makes the image quality much better
         await page.setViewport(options);
-        await page.goto(`https://${url}`);
+        await page.goto(`https://${strippedUrl}`);
         // wait for pageload
         await page.waitFor(2000);
         const generatedFileName = `${Date.now()}`;
