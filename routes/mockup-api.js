@@ -69,7 +69,7 @@ router.post('/', async (req, res, next) => {
             return res.status(201).json({ image: cloudinaryImageSource });
         });
     } else {
-        return res.json({ msg: 'Could not navigate to page' })
+        return res.json({ error: true, msg: 'something went wrong when trying to reach the requested page...' })
     }
 
 });
