@@ -5,6 +5,9 @@
     width: 100%;
     max-width: 500px;
     height: 500px;
+    background-color: $color-bg-dark;
+    border-radius: 50%;
+    margin-bottom: 4rem;
 
     img {
         position: absolute;
