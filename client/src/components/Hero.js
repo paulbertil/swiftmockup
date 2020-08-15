@@ -5,6 +5,7 @@ import MockupDisplay from './MockupDisplay';
 import MaxWidthContainer from './MaxWidthContainer';
 import HeroStyles from './Hero.module.scss'
 import DeviceRadioGroup from './DeviceRadioGroup';
+import ErrorDisplay from './ErrorDisplay';
 
 
 
@@ -12,6 +13,7 @@ const Hero = () => {
     const [data, setData] = useState(null);
     const [url, setUrl] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [errorMessage, setErrorMessage] = useState('');
     const [mockupImage, setMockupImage] = useState('');
     const [isFormSubmitted, setIsFormSubmitted] = useState(false);
     const [mockupType, setMockupType] = useState('phone')
@@ -45,6 +47,10 @@ const Hero = () => {
         setMockupImage('')
     }
 
+    const handleErrorMessage = () => {
+        setErrorMessage('');
+    }
+
 
     const handleFormSubmit = async (event) => {
         console.log('submitting...')
@@ -57,7 +63,9 @@ const Hero = () => {
             });
 
             const data = await response.json();
-            console.log(data);
+            if (data.error) {
+                setErrorMessage(data.msg)
+            }
             handleFormLoad(false);
             setMockupImage(data.image);
 
@@ -78,7 +86,7 @@ const Hero = () => {
                         />
                     )}
                     {/* Show headline when no image is generated */}
-                    {!mockupImage && (
+                    {!mockupImage && !errorMessage && (
                         <>
                             <div className={HeroStyles.heroHeadline}>
                                 <h1>URL to High Quality Mockup</h1>
@@ -100,8 +108,9 @@ const Hero = () => {
                             }
                         </>
                     )}
-
-
+                    {errorMessage && (
+                        <ErrorDisplay handleErrorMessage={handleErrorMessage} message={errorMessage} />
+                    )}
                 </div>
             </MaxWidthContainer>
         </div>
