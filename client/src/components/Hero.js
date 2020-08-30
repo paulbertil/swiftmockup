@@ -90,7 +90,7 @@ const Hero = () => {
                         <>
                             <div className={HeroStyles.heroHeadline}>
                                 <h1>URL to High Quality Mockup</h1>
-                                <p>Showcase your projects lika a professional</p>
+                                <p>Showcase your projects like a professional</p>
                             </div>
                             {/* Hide device selection when form is submitted  */}
                             {!isFormSubmitted && (
