@@ -13,8 +13,16 @@ html {
     font-size: 62.5%;
     scroll-behavior: smooth;
 
-   
+    @media(max-width:500px) {
+        font-size: 50%;
+    }
+
+    @media(max-width:400px) {
+        font-size: 40%;
+    }
 }
+
+
 
 
 body {
