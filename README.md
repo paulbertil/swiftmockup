@@ -3,4 +3,7 @@
 
 To help designers and developers showcase their websites & webapps, i created this free [URL to mockup application](https://www.swiftmockup.com).
 
-![Demo Image](appdemo.gif)
+
+
+### App Demo 
+![Demo gif](appdemo.gif)
